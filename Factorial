@@ -1,0 +1,27 @@
+using System;
+// Mark Byers
+// Write a program that calculates factorial of an integer n given by the user. 
+
+class Program
+{
+    static void Main(string[] args)
+    {
+        string input;
+        int x;
+        int count, factorial;
+        Console.WriteLine("Enter a number");
+        input = Console.ReadLine();
+        x = int.Parse(input);
+
+        for (count = x, factorial = 1;  count > 0; count--)
+        {
+            //Console.WriteLine("{0} - Count | {1} Factorial", count, factorial);
+            factorial = count * factorial;
+            //Console.WriteLine("          | {1} Factorial", count, factorial);
+            //Console.WriteLine("---------------------------");
+        }
+        Console.WriteLine("Factorial of {0} is {1}", x, factorial);
+
+    }
+}
+
