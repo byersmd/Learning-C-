@@ -108,3 +108,17 @@ System.Console.WriteLine("{0} equals {1}", allLength, total);
 ```
 
 --A jagged array is an array whose elements are arrays. The elements of a jagged array can be of different dimensions and sizes. A jagged array is sometimes called an "array of arrays."--
+
+
+**The foreach Statement**
+
+The `foreach` statement is used to iterate through an array or collection of objects.
+
+```C#
+foreach (int x in numbers)
+        {
+            sum = sum + x;
+        }
+```
+
+
