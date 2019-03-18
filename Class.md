@@ -28,3 +28,4 @@ A `class` is synonymous with `type`
 Constructors have the look of a method but return nothing. They are used as **initializers**
 A constructor **MUST** have the same name as the class it is created in.
 
+making use of a class is called **instantiation**
