@@ -64,7 +64,17 @@ class TestVerySimpleClass
    static void Main()
    {
       
-      VerySimple ver = new VerySimple();
+      VerySimple ver = new VerySimple(); // Instantiation
    }
 }
 ```
+
+**Instantiation** - __Under the Hood__
+
+1. Declare object of a type
+2. Have the object point to null
+3. Initialize all fields to zero inside the Type
+4. Call on any constructors of the class if any
+5. If any parameters needed to be passed to set or initialize the fields
+6. Pass the object back to the user (object is created and is no longer pointed to null
+7. Full access to public entities of the class
