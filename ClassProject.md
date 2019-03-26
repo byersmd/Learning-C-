@@ -141,6 +141,8 @@ class Program
                                 items[changeItemNumber].QuantityOnHand = qty;
                                 items[changeItemNumber].OurCostPerItem = cost;
                                 items[changeItemNumber].ValueOfItem = value;
+                                Console.WriteLine("\nID# | Description | Price | QTY  |   Cost    |   Value     ");
+                                Console.WriteLine("{0,-4}| {1,-10}  | {2,-6:C}| {3,4} | {4,-10:C}| {5,-10:C}\n\n", itemNumber + 1, items[itemNumber].Description, items[itemNumber].PricePerItem, items[itemNumber].QuantityOnHand, items[itemNumber].OurCostPerItem, items[itemNumber].ValueOfItem);
 
                                 //numberOfItems++;
                             }
@@ -158,7 +160,7 @@ class Program
                     {
                         Console.Write("Enter an item ID#:  ");
                         string input = Console.ReadLine();
-                        int deleteItemNumber = int.Parse(input) - 1;
+                        int deleteItemNumber = int.Parse(input) ;
                         bool deleted = false;
 
                         for (int x = 0; x < countOfItems; x++)
@@ -182,11 +184,11 @@ class Program
 
                         if (deleted) // hint the user that you deleted the requested item
                         {
-                            Console.WriteLine("Item \" {0,-3}\" deleted\n\n", deleteItemNumber + 1);
+                            Console.WriteLine("Item \" {0,-3}\" deleted\n\n", deleteItemNumber);
                         }
                         else // if did not find it, hint the user that you did not find it in your list
                         {
-                            Console.WriteLine("Item \" {0,-3}\" not found\n\n", deleteItemNumber + 1);
+                            Console.WriteLine("Item \" {0,-3}\" not found\n\n", deleteItemNumber);
                         }
 
                         break;
@@ -217,6 +219,7 @@ class Program
                         {
                             optx = 0; //as long as it is not 5, the process is not breaking   
                         }
+                        Console.Write("\n Enter \"CNTRL + Q\" in order to quit");
                         break;
                     }
 
