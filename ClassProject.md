@@ -77,7 +77,7 @@ class Program
             {
                 case 1: // add an item to the list if this option is selected
                     {
-                        itemNumber = numberOfItems + 1;
+                        //itemNumber = numberOfItems + 1;
                         Console.Write("Item Description :  ");
                         var description = Console.ReadLine();
                         Console.Write("      Item Price : $");
@@ -128,15 +128,38 @@ class Program
                             if (items[x].ItemNumber == changeItemNumber)
                             {
                                 fFound = true;
-                                // code to show what has to happen if the item in the list is found
-                                // reset the count to show a new count for your list 
-                                // (Note: your list is now increased by one item)
+                            // code to show what has to happen if the item in the list is found
+                            // reset the count to show a new count for your list 
+                            // (Note: your list is now increased by one item)
+                                
+
+                                changeItemNumber = changeItemNumber - 1;
+                                Console.Write("Item Description :  ");
+                                var description = Console.ReadLine();
+                                Console.Write("      Item Price : $");
+                                var price_ = Console.ReadLine();
+                                var price = double.Parse(price_);
+                                Console.Write("   Item Quantity :  ");
+                                var quantity = Console.ReadLine();
+                                var qty = int.Parse(quantity);
+                                Console.Write("       Item Cost : $");
+                                var cost_ = Console.ReadLine();
+                                var cost = double.Parse(cost_);
+                                double value = price * qty;
+
+                                items[changeItemNumber].Description = description;
+                                items[changeItemNumber].PricePerItem = price;
+                                items[changeItemNumber].QuantityOnHand = qty;
+                                items[changeItemNumber].OurCostPerItem = cost;
+                                items[changeItemNumber].ValueOfItem = value;
+
+                                numberOfItems++;
                             }
                         }
 
                         if (!fFound) // and if not found
                         {
-                            Console.WriteLine("Item {0} not found", changeItemNumber);
+                            Console.WriteLine("Item \"{0,-4}\" not found\n", changeItemNumber);
                         }
 
                         break;
@@ -156,17 +179,19 @@ class Program
                                 deleted = true;
                                 // delete the item if you found it
                                 // reset the count to show a new count for your list 
-                                // (Note: your list is now reduced by one item)                              
+                                // (Note: your list is now reduced by one item) '
+                                items[x].ItemNumber = 0;
+                                numberOfItems--;
                             }
                         }
 
                         if (deleted) // hint the user that you deleted the requested item
                         {
-                            Console.WriteLine("Item deleted");
+                            Console.WriteLine("Item deleted\n");
                         }
                         else // if did not find it, hint the user that you did not find it in your list
                         {
-                            Console.WriteLine("Item {0} not found", deleteItemNumber);
+                            Console.WriteLine("Item \"{0,-4}\" not found\n", deleteItemNumber);
                         }
 
                         break;
@@ -181,8 +206,6 @@ class Program
                         {
                             Console.WriteLine("{0,-4}| {1,-10}  | {2,-6:C}| {3,4} | {4,-10:C}| {5,-10:C}\n", itemNumber, items[itemNumber].Description, items[itemNumber].PricePerItem, items[itemNumber].QuantityOnHand, items[itemNumber].OurCostPerItem, items[itemNumber].ValueOfItem);
                         }
-                                    }
-
                         break;
                     }
 
